@@ -1,21 +1,35 @@
+
 # ==============================================================================
-# Requirements for NVIDIA Parakeet-CTC 1.1B + ESP32 Speech Pipeline
+# Requirements for Intelligent Smart Pen
+# NVIDIA Parakeet-CTC 1.1B + ESP32 Speech Pipeline
 # ==============================================================================
 
-# Core Deep Learning & Audio Processing
-transformers>=4.40.0,<=5.19.0
-soundfile>=0.12.1
-huggingface_hub>=0.20.0
+# Core Deep Learning and Speech Recognition
+transformers>=4.40.0
+torch
+accelerate
+safetensors
+tokenizers
+
+# Audio Processing and Numerical Computation
 numpy>=1.24.0
+soundfile>=0.12.1
 
-# Hardware & ESP32 Serial Communication
+# Hugging Face Model Download and Management
+huggingface_hub>=0.20.0
+
+# ESP32 Hardware and Serial Communication
 pyserial>=3.5
 
-# NOTE ON PYTORCH INSTALLATION:
-# PyTorch with CUDA acceleration (for RTX 2050 / NVIDIA GPUs) must be installed 
-# using the PyTorch wheel repository. Run the following command:
+# Keyboard Automation and System Interaction
+pynput
+
+# ==============================================================================
+# PYTORCH CUDA INSTALLATION
+# Install PyTorch separately for NVIDIA GPU acceleration.
 #
+# Example for CUDA 12.6:
 # pip install torch --index-url https://download.pytorch.org/whl/cu126
 #
-# (Or cu124/cu121 depending on your installed CUDA driver version)
-
+# Select the appropriate PyTorch CUDA version for your system.
+# ==============================================================================
